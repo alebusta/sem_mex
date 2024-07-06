@@ -23,7 +23,7 @@ Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santia
 """)
 
 # Inicialización de componentes (asegúrate de tener las variables de entorno configuradas)
-load_dotenv()
+#load_dotenv()
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 parser = StrOutputParser()
 loader = DirectoryLoader('transcripciones/', glob="**/*.pdf")
