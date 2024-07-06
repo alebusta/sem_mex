@@ -9,8 +9,8 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from operator import itemgetter
-import os
-from dotenv import load_dotenv
+#import os
+#from dotenv import load_dotenv
 
 # Configuración de la página de Streamlit
 st.set_page_config(page_title="Chatbot Seminarios", page_icon="🧠")
@@ -24,7 +24,7 @@ Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santia
 
 # Inicialización de componentes (asegúrate de tener las variables de entorno configuradas)
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 parser = StrOutputParser()
 loader = DirectoryLoader('transcripciones/', glob="**/*.pdf")
 pags = loader.load_and_split()
