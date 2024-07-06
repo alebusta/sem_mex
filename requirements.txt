@@ -2,3 +2,4 @@ streamlit
 langchain
 docarray
 openai
+langchain-community
