@@ -3,6 +3,6 @@ langchain
 docarray
 openai
 langchain-community
-unstructured
+unstructured[pdf]
 langchain-core
 psutil
