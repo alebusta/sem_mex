@@ -4,3 +4,4 @@ docarray
 openai
 langchain-community
 unstructured
+langchain-core
