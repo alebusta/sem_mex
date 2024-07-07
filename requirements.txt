@@ -11,3 +11,5 @@ layoutparser
 pandas
 scipy
 numpy
+psutil
+unstructured[pdf]
