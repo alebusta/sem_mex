@@ -13,3 +13,4 @@ scipy
 numpy
 psutil
 unstructured[pdf]
+docarray
