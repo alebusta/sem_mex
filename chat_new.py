@@ -20,6 +20,10 @@ st.write("""
 Experimento para obtener conocimiento a partir de intervenciones de un seminario o conferencia.
 Para esta prueba se ha tomado como base las transcripciones de la Sesión 5 de la Primera Conferencia 
 Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santiago, 20 y 21 de junio de Junio.
+
+Esta base de conocimiento ha sido alimentada con la Agenda de la conferencia y con las intervenciones y discusión
+de los panelistas de la Sesión 5 "El  estado  del  arte  en  materia  de  comisiones  de  futuro 
+parlamentarias en el mundo. Experiencias exitosas". Por lo tanto el chatbot responderá en relación a dicho contenido.
 """)
 
 # Inicialización de componentes (asegúrate de tener las variables de entorno configuradas)
