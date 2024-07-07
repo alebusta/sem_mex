@@ -5,3 +5,4 @@ openai
 langchain-community
 unstructured
 langchain-core
+psutil
