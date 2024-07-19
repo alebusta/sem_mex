@@ -15,4 +15,3 @@ psutil
 unstructured[pdf]
 docarray
 tiktoken
-libgl1-mesa-glx
