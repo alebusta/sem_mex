@@ -16,7 +16,7 @@ from operator import itemgetter
 st.set_page_config(page_title="Chatbot Seminarios", page_icon="🧠")
 
 # Colocando el título y el logo en columnas
-col1, col2 = st.columns([4, 1])
+col1, col2 = st.columns([1, 4])
 with col1:
     st.image("cepal.png", width=100)  # Asegúrate de proporcionar la ruta correcta al logo
 
