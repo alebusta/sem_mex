@@ -18,16 +18,18 @@ st.set_page_config(page_title="Chatbot Seminarios", page_icon="🧠")
 # Colocando el título y el logo en columnas
 col1, col2 = st.columns([4, 1])
 with col1:
-    st.title("Chatbot Cepal Lab")
-with col2:
     st.image("cepal.png", width=100)  # Asegúrate de proporcionar la ruta correcta al logo
+
+with col2:
+    st.title("Chatbot Cepal Lab")
+    
 
 st.write("""
 Hola soy un asistente virtual que brinda información respecto a la Primera Conferencia 
 Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santiago, 20 y 21 de junio de Junio. 
-Esta reunión organizada por la CEPAL y los parlamentos de Chile y Uruguay, reunió a expertos y parlamentarios
-de la región para conversar acerca de los principales temas de futuro y de las diversas experiencias en la
-región y en el mundo respecto a la construcción de institucionalidad de prospectiva y futuro.
+Esta conferencia organizada por la CEPAL y los parlamentos de Chile y Uruguay, convocó a expertos y parlamentarios
+de la región y del mundo para conversar acerca de los principales temas de futuro y de las diversas experiencias 
+respecto a la construcción de institucionalidad de prospectiva y de futuro.
 
 A través de este chat podrás conocer en detalle aspectos tratadas en esta importante conferencia.
 """)
