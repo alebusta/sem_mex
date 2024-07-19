@@ -14,16 +14,22 @@ from operator import itemgetter
 
 # Configuración de la página de Streamlit
 st.set_page_config(page_title="Chatbot Seminarios", page_icon="🧠")
-st.title("Extracción de información de seminarios y conferencias")
+
+# Colocando el título y el logo en columnas
+col1, col2 = st.columns([4, 1])
+with col1:
+    st.title("Chatbot Cepal Lab")
+with col2:
+    st.image("cepal.png", width=100)  # Asegúrate de proporcionar la ruta correcta al logo
 
 st.write("""
-Experimento para obtener conocimiento a partir de intervenciones de un seminario o conferencia.
-Para esta prueba se ha tomado como base las transcripciones de la Sesión 5 de la Primera Conferencia 
-Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santiago, 20 y 21 de junio de Junio.
+Hola soy un asistente virtual que brinda información respecto a la Primera Conferencia 
+Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santiago, 20 y 21 de junio de Junio. 
+Esta reunión organizada por la CEPAL y los parlamentos de Chile y Uruguay, reunió a expertos y parlamentarios
+de la región para conversar acerca de los principales temas de futuro y de las diversas experiencias en la
+región y en el mundo respecto a la construcción de institucionalidad de prospectiva y futuro.
 
-Esta base de conocimiento ha sido alimentada con la Agenda de la conferencia y con las intervenciones y discusión
-de los panelistas de la Sesión 5 "El  estado  del  arte  en  materia  de  comisiones  de  futuro 
-parlamentarias en el mundo. Experiencias exitosas". Por lo tanto el chatbot responderá en relación a dicho contenido.
+A través de este chat podrás conocer en detalle aspectos tratadas en esta importante conferencia.
 """)
 
 # Inicialización de componentes (asegúrate de tener las variables de entorno configuradas)
@@ -73,7 +79,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("¿Qué quieres saber?"):
+if prompt := st.chat_input("¿Haz aquí tu pregunta respecto a la conferencia?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
