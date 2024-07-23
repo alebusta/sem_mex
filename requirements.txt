@@ -8,3 +8,4 @@ python-dotenv==1.0.0
 unstructured==0.14.9
 psutil==5.9.0
 unstructured[pdf]
+langchain[docarray]
