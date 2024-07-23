@@ -9,8 +9,6 @@ from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from operator import itemgetter
-#import os
-#from dotenv import load_dotenv
 
 # Configuración de la página de Streamlit
 st.set_page_config(page_title="Chatbot Seminarios", page_icon="🧠")
@@ -22,7 +20,6 @@ with col1:
 
 with col2:
     st.title("Chatbot Cepal Lab")
-    
 
 st.write("""
 Hola soy un asistente virtual que brinda información respecto a la Primera Conferencia 
@@ -34,18 +31,16 @@ respecto a la construcción de institucionalidad de prospectiva y de futuro.
 A través de este chat podrás conocer en detalle aspectos tratadas en esta importante conferencia.
 """)
 
-# Inicialización de componentes (asegúrate de tener las variables de entorno configuradas)
-#load_dotenv()
+# Inicialización de componentes
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 parser = StrOutputParser()
 loader = DirectoryLoader('transcripciones/', glob="**/*.pdf")
 pags = loader.load_and_split()
-openai_api_key = OPENAI_API_KEY
-embeddings = OpenAIEmbeddings(api_key=openai_api_key)
+embeddings = OpenAIEmbeddings(api_key=OPENAI_API_KEY)
 vectorstore = DocArrayInMemorySearch.from_documents(pags, embedding=embeddings)
 retriever = vectorstore.as_retriever()
 
-model = ChatOpenAI(model_name="gpt-4o", openai_api_key=openai_api_key, temperature=0, streaming=True)
+model = ChatOpenAI(model_name="gpt-4", openai_api_key=OPENAI_API_KEY, temperature=0, streaming=True)
 prompt = ChatPromptTemplate.from_messages([
     ("system", "Eres un asistente útil. Usa el siguiente contexto para responder la pregunta: {context}. No contestes preguntas que no se relacionen con el contexto"),
     ("human", "{question}")
@@ -53,7 +48,6 @@ prompt = ChatPromptTemplate.from_messages([
 
 # Configuración de la memoria
 msgs = StreamlitChatMessageHistory(key="langchain_messages")
-#memory = ConversationBufferMemory(memory_key="chat_history", chat_memory=msgs, return_messages=True)
 
 # Definición de la cadena
 chain = (
@@ -61,7 +55,6 @@ chain = (
         "context": itemgetter("question") | retriever,
         "question": itemgetter("question")
     }
-    
     | prompt
     | model
     | parser
@@ -70,7 +63,6 @@ chain = (
 # Función para ejecutar la cadena y actualizar la memoria
 def run_chain(question):
     result = chain.invoke({"question": question})
-    #memory.save_context({"question": question}, {"output": result})
     return result
 
 # Interfaz de usuario de Streamlit
@@ -96,7 +88,3 @@ if st.button("Limpiar historial"):
     msgs.clear()
     st.session_state.messages = []
     st.experimental_rerun()
-
-# Mostrar el historial de chat (opcional, para depuración)
-#if st.checkbox("Mostrar historial de chat"):
-#    st.write(msgs.messages)
