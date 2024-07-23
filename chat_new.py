@@ -31,7 +31,7 @@ Esta conferencia organizada por la CEPAL y los parlamentos de Chile y Uruguay, c
 de la región y del mundo para conversar acerca de los principales temas de futuro y de las diversas experiencias 
 respecto a la construcción de institucionalidad de prospectiva y de futuro.
 
-A través de este chat podrás conocer en detalle aspectos tratadas en esta importante conferencia.
+A través de este chat podrás conocer en detalle aspectos tratados en esta importante conferencia.
 """)
 
 # Inicialización de componentes
