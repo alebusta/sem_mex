@@ -37,7 +37,7 @@ A través de este chat podrás conocer en detalle aspectos tratadas en esta impo
 # Inicialización de componentes
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 parser = StrOutputParser()
-loader = DirectoryLoader('documento/', glob="**/*.pdf")
+loader = DirectoryLoader('transcripciones/', glob="**/*.pdf")
 pags = loader.load_and_split()
 openai_api_key = OPENAI_API_KEY
 embeddings = OpenAIEmbeddings(api_key=openai_api_key)
