@@ -2,30 +2,20 @@ import streamlit as st
 import subprocess
 import sys
 
-def install_package(package_name):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+def install_requirements():
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
 
-# Lista de paquetes y sus versiones
-required_packages = {
-    "docarray": "0.32.1",
-    "langchain": "0.2.0",
-    "langchain_community": "0.2.0",
-    "openai": "1.30.1",
-    "PyPDF2": "3.0.1",
-    "python_dotenv": "1.0.0",
-    "unstructured": "0.14.9",
-    "psutil": "5.9.0",
-    "unstructured[pdf]": "0.14.9"
-}
+try:
+    import langchain
+    import openai
+    import PyPDF2
+    import unstructured
+    import psutil
+except ImportError:
+    st.write("Installing required packages...")
+    install_requirements()
+    st.experimental_rerun()
 
-# Verificar e instalar los paquetes necesarios
-for package, version in required_packages.items():
-    try:
-        __import__(package)
-    except ImportError:
-        install_package(f"{package}=={version}")
-
-# Importar librerías después de la instalación forzada
 import streamlit as st
 from langchain.document_loaders import DirectoryLoader
 from langchain.schema.runnable import RunnablePassthrough
