@@ -92,6 +92,13 @@ if prompt := st.chat_input("¿Qué quieres saber?"):
 
 # Botón para limpiar el historial de chat
 if st.button("Limpiar historial"):
-    msgs.clear()
-    st.session_state.messages = []
-    st.experimental_rerun()
+    # Limpiar las mensajes
+    if 'msgs' in locals() or 'msgs' in globals():
+        msgs.clear()
+    
+    # Limpiar el estado de la sesión
+    if 'messages' in st.session_state:
+        st.session_state.messages = []
+    
+    # Usar rerun() en lugar de experimental_rerun()
+    st.rerun()
