@@ -25,11 +25,8 @@ with col2:
     st.title("Chatbot Cepal Lab")
 
 st.write("""
-Hola soy un asistente virtual que brinda información respecto a la Primera Conferencia 
-Regional de las Comisiones de Futuro Parlamentarias realizada en CEPAL el Santiago, 20 y 21 de junio de Junio. 
-Esta conferencia organizada por la CEPAL y los parlamentos de Chile y Uruguay, convocó a expertos y parlamentarios
-de la región y del mundo para conversar acerca de los principales temas de futuro y de las diversas experiencias 
-respecto a la construcción de institucionalidad de prospectiva y de futuro.
+Hola soy un asistente virtual que brinda información respecto a la Capacidades Ampliadas con Prospectiva e Inteligencia Artificial  
+en el contexto organizacional de la CEPAL llevada a cabo en la oficina de la CEPAL de México en noviembre de 2024.
 
 A través de este chat podrás conocer en detalle aspectos tratados en esta importante conferencia.
 """)
