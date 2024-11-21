@@ -25,8 +25,7 @@ with col2:
     st.title("Chatbot Cepal Lab")
 
 st.write("""
-Hola soy un asistente virtual que brinda información respecto a la Capacidades Ampliadas con Prospectiva e Inteligencia Artificial  
-en el contexto organizacional de la CEPAL llevada a cabo en la oficina de la CEPAL de México en noviembre de 2024.
+Hola soy un asistente virtual que brinda información respecto a la Capacidades Ampliadas con Prospectiva e Inteligencia Artificial en el contexto organizacional de la CEPAL llevada a cabo en la oficina de la CEPAL de México en noviembre de 2024.
 
 A través de este chat podrás conocer en detalle aspectos tratados en esta importante conferencia.
 """)
